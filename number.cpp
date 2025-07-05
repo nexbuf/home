@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 int main() {
-    std::string guess;
+    std::string guess,guess2,guess3;
     std::random_device device;
     std::mt19937 gen(device());
     std::uniform_int_distribution<> round1(1, 30);
@@ -23,10 +23,14 @@ int main() {
     std::cout << "Enter guess for first number: ";
     std::cin >> guess;
     if ( std::stoi(guess) == r1 ) {
-        std::cout << "Correct Guess for round 1! you now have 100 coins in your balance";
-        if ( std::stoi(guess) == r2 ) {
-            std::cout << "Correct Guess for round 2! you now have 600 coins in your balance";
-            if ( std::stof(guess) == r3 ) {
+        std::cout << "Correct Guess for round 1! you now have 100 coins in your balance\n";
+        std::cout << "Enter guess for second number: ";
+        std::cin >> guess2;
+        if ( std::stoi(guess2) == r2 ) {
+            std::cout << "Correct Guess for round 2! you now have 600 coins in your balance\n";
+            std::cout << "Enter guess for third number: ";
+            std::cin >> guess3;
+            if ( std::stof(guess3) == r3 ) {
                 std::cout << "Correct Guess for round 3! you now have 1100 coins in your balance\n";
                 std::cout << "Thanks for playing!";
                 exit(0);
